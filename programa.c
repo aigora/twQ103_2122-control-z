@@ -12,24 +12,33 @@ int main () {
 
     int tam_users,i=0,edad;
 
-    printf("Bienvenido al juego Como escapar de la selva \n");
-    printf("Durante toda la travesia, tendra que elegir opciones que estas le llevaran por el buen camino o.... \n");
-    printf("A UNA MUERTE CATASTROFICA \n");
+    printf("Al fin te hemos encontrado!\n");
+    printf("\n");
+    printf("Bueno dejame contarte, antes de que perdieras la memoria trabajabas para la empresa de modificacion genetica 'Control Z'");
+	printf("encargada de crear bacterias y virus para erradicar todas las enfermedades del mundo.\n");
+	printf("\n");
+    printf("Y asi fue, hoy en dia no hay ni malaria ni COVID19  entre otras enfermedades, pero...\n");
+    printf("una alteracion genetica en uno de esos nuevos virus permitio que llegara a los humanos a los cuales transforma en... \n");
+    printf("ZOMBIES!!!!\n");
+    printf("\n");
+    printf("Hemos denominado al virus en cuestion 'VirusZ'\n");
+    printf("Tu mision es encontrar la cura a VirusZ antes de que el 100%% de la poblacion se convierta en zombie\n");
+    printf("\n");
+    printf("Ya que sabes lo que tienes que hacer. Hablame de ti: \n");
 
     do{
-        printf("Este juego es para mayores de 12 anhos \n");
-        printf("Escriba su edad \n");
+        printf("Escriba su edad (Este juego es para mayores de 12 anhos) \n");
         scanf("%d",&edad);
-    }while(edad<=12);
+    }while(edad<12);
 
     do{
-        printf("Cuantos usuarios son (la jugabilidad maxima de este juego son 4 usuarios): \n");
+        printf("Cuantos cientificos nos salvaran? (la jugabilidad maxima de este juego son 4 usuarios): \n");
         scanf("%d",&tam_users);
     }while(tam_users>4);
 
     while(tam_users>i){
         fflush(stdin);
-        printf("Escriba su nombre jugador %d \n",i+1);
+        printf("Escriba su nombre cientifico %d \n",i+1);
         gets(usuarios[i].nombre);
         printf("Escriba sus apellidos \n");
         gets(usuarios[i].apellidos);
