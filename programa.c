@@ -58,6 +58,9 @@ int main () {
         gets(usuarios[i].username);
         i++;
 	}
+	for(i=0;tam_users>i;i++){
+        printf("Bienvenido cientifico %s \n",usuarios[i].username);
+	}
 	//solo para cuando solo haya menu
 		printf("\nJugar de nuevo? SI(1) NO(3)\n");
 			scanf("%d",&menu);
@@ -66,16 +69,16 @@ int main () {
 		}else if (menu==2)	{
 			system("cls");
 			fflush(stdin);
-		
+
 			printf("CONFIGURACION DE COLORES DE LAS LETRAS DE LA INTERFAZ\n");
-		
+
 			printf("Verde(V),Rojo(R),Amarillo(A),Blanco(B):\t");
-		
+
 			scanf("%c",&color);
-		
+
 			if (color=='V' || color=='v')	{
 				system("COLOR 02");
-				
+
 			}else if (color=='r' || color=='R')	{
 				system("COLOR 04");
 			}else if (color=='a' || color=='A')	{
@@ -86,4 +89,4 @@ int main () {
 			system("cls");
 		}
 	}
-} 
+}
