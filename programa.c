@@ -11,7 +11,7 @@ struct Dusuario {
 int main () {
 	struct Dusuario usuarios[TAM_MAX];
 	char color;
-    int tam_users,i=0,edad,menu=0;
+    int tam_users,i=0,edad,menu=0,respuesta;
     system("COLOR 04");
     while (menu!=3)	{
     	printf("\n------------------------------------------------------------------------------------------------------------------------\n");
@@ -60,6 +60,34 @@ int main () {
 	}
 	for(i=0;tam_users>i;i++){
         printf("Bienvenido cientifico %s \n",usuarios[i].username);
+	}
+
+	printf("Pulse 1 si desea hacer el tutorial, pulse cualquier otra tecla si no lo necesita \n");
+	scanf("%d",&respuesta);
+	system("cls");
+	if(respuesta == 1){
+        for(i=0;tam_users>i;i++){
+        printf("Bienvenido al tutorial cientifico %s \n",usuarios[i].username);
+	}
+        printf("Durante todo este juego tendras problemas, \n");
+        printf("si los resuelves bien sobreviras, si no resuelves los suficientes bien, moriras \n");
+        printf("Las preguntas se responderan con el numero 1 - 2 - 3 - 4 \n");
+        printf("Entonces, para que te acostumbres a la supervivencia... \n");
+        printf("El edificio en el que te acabas de despertar se está derrumbando... \n");
+        printf("1- En la primera salida, no hay ningun zombie pero tardas 30 minutos en salir \n");
+        printf("2- En la segunda salida, hay una horda de 6 zombies, pero tienes un AK-47 con 5 balas \n");
+        printf("3- En la tercera salida, hay un comboy del gobierno que te llevara a un lugar seguro \n");
+        printf("4- En la cuarta salida llegas a la terraza del edificio y tu unica opcion es lanzarte desde ahi \n");
+        do{
+        printf("Cual es la que tendra mayor indice de supervivencia? \n");
+        scanf("%d",&respuesta);
+        if(respuesta == 3){
+            printf("Bien hecho, has conseguido salir del hospital");
+        }else{
+            printf("Has muerto de una manera catastrofica (responde la 3)");
+        }
+        }while(respuesta!=3);
+
 	}
 	//solo para cuando solo haya menu
 		printf("\nJugar de nuevo? SI(1) NO(3)\n");
