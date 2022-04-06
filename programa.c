@@ -70,7 +70,7 @@ int main () {
         printf("Bienvenido al tutorial cientifico %s \n",usuarios[i].username);
 	}
         printf("Durante todo este juego tendras problemas, \n");
-        printf("si los resuelves bien sobreviras, si no resuelves los suficientes bien, moriras \n");
+        printf("si los resuelves bien sobreviviras, si no resuelves los suficientes bien, moriras \n");
         printf("Las preguntas se responderan con el numero 1 - 2 - 3 - 4 \n");
         printf("Entonces, para que te acostumbres a la supervivencia... \n");
         printf("El edificio en el que te acabas de despertar se está derrumbando... \n");
