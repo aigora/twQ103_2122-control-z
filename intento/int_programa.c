@@ -54,11 +54,6 @@ int main(){
             }
             else if(respuesta==2){
                 fflush(stdin);
-                pfile=fopen("ficheru.txt","r");
-                if(pfile==NULL){
-                    printf("error");
-                    return 0;
-                }
                 printf("Digame su nombre de usuario \n");
                 gets(usuarios[i].username);
                 j=ntotalg;
@@ -76,7 +71,6 @@ int main(){
                     printf("no encontramos su nombre de usuario \n");
                     i--;
                 }
-                fclose(pfile);
 
                 if(orden==0){
                     pfile=fopen("ficheru.txt","a");
