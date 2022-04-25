@@ -9,6 +9,54 @@ struct Dusuario {
     char username[50];
     int puntuacion;
 };
+//funciones de las preguntas
+
+char preguntaA() {
+	
+	char opcionA;
+	scanf("%c", &opcionA);
+	if (opcionA =='A'||opcionA =='a') {
+		
+		
+		printf("CORRECTO!!!\n");
+	}
+	else {
+		printf("pfff un poco mal eh\n");
+	}
+	return opcionA;
+}
+	
+char preguntaB() {
+	
+	char opcionB;
+		scanf("%c", &opcionB);
+	if (opcionB =='B'||opcionB =='b') {
+		
+		
+		printf("CORRECTO!!!\n");
+	}
+	else {
+		printf("pfff un poco mal eh\n");
+	}
+return opcionB;
+}
+
+char preguntaC() {
+	
+	char opcionC;
+	
+	scanf("%c", &opcionC);
+	if (opcionC =='C'||opcionC =='c') {
+		
+		
+		printf("CORRECTO!!!\n");
+	}
+	else {
+		printf("pfff un poco mal eh\n");
+		
+	}
+	return opcionC;
+}
 int main(){
     FILE*pfile;
     int i=0,tam_users,j=0,respuesta,orden,ntotalg;
@@ -91,6 +139,15 @@ int main(){
 
             i++;
         }
+        
+        
+        //pregunta prueba
+    printf("Cuantas caras tiene un isocaedro?\n");
+	printf("A 2\n");
+	printf("B 15\n");
+	printf("C  20?\n");
+	
+	preguntaC();
         return 0;
 }
 
