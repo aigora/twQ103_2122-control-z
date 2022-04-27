@@ -18,7 +18,7 @@ int main () {
 	char color;
     int tam_users,i=0,edad,menu=0,respuesta;
     int j=0,orden,ntotalg;
-    
+
     pfile=fopen("ficheru.txt","r");
         if(pfile==NULL){
             printf("error");
@@ -92,7 +92,7 @@ int main () {
             while(j>=0){
                 orden=strcmp(usuarios[i].username,usuariosg[j].username);
                 if(orden==0){
-                    printf("Bienvenido %s, te echabamos de menos, tu record es %d\n",usuariosg[j].username,usuariosg[j].puntuacion);
+                    printf("Bienvenido %s, te echabamos de menos, su ultima puntuacion es %d\n",usuariosg[j].username,usuariosg[j].puntuacion);
                     usuarios[i].puntuacion=0;
                     break;
                 }else{
@@ -116,7 +116,7 @@ int main () {
             }
 
             i++;
-        }		
+        }
 	//solo para cuando solo haya menu
 		printf("\nJugar de nuevo? SI(1) NO(3)\n");
 			scanf("%d",&menu);
