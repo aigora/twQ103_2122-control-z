@@ -14,51 +14,18 @@ struct Dusuario {
 
 //funciones de las preguntas
 
-char preguntaA() {
-	
-	char opcionA;
-	scanf("%c", &opcionA);
-	if (opcionA =='A'||opcionA =='a') {
-		
-		
-		printf("CORRECTO!!!\n");
-	}
-	else {
-		printf("pfff un poco mal eh\n");
-	}
-	return opcionA;
-}
-	
-char preguntaB() {
-	
-	char opcionB;
-		scanf("%c", &opcionB);
-	if (opcionB =='B'||opcionB =='b') {
-		
-		
-		printf("CORRECTO!!!\n");
-	}
-	else {
-		printf("pfff un poco mal eh\n");
-	}
-return opcionB;
-}
+char pregunta(char correcta) {
 
-char preguntaC() {
-	
-	char opcionC;
-	
-	scanf("%c", &opcionC);
-	if (opcionC =='C'||opcionC =='c') {
-		
-		
+	char opcion;
+	scanf("%c", &opcion);
+	if (opcion == correcta) {
 		printf("CORRECTO!!!\n");
 	}
 	else {
 		printf("pfff un poco mal eh\n");
-		
 	}
-	return opcionC;
+	return opcion;
+}
 int main () {
 	FILE*pfile;
 	struct Dusuario usuarios[TAM_MAX];
@@ -129,6 +96,7 @@ int main () {
                 gets(usuarios[i].email);
                 printf("Escriba su username \n");
                 gets(usuarios[i].username);
+                usuarios[i].puntuacion=0;
                 fprintf(pfile,"%s %s %s %s %s %d \n",usuarios[i].nombre,usuarios[i].apellido,usuarios[i].email,usuarios[i].username,&usuarios[i].puntuacion);
                 fclose(pfile);
         }
@@ -165,6 +133,15 @@ int main () {
 
             i++;
         }
+            //respuestas posibles
+            char a,b,c;
+            printf("Cuantas caras tiene un isocaedro?\n");
+            printf("a 2\n");
+            printf("b 15\n");
+            printf("c 20?\n");
+            pregunta('c');
+
+	return 0;
 	//solo para cuando solo haya menu
 		printf("\nJugar de nuevo? SI(1) NO(3)\n");
 			scanf("%d",&menu);
