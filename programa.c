@@ -15,11 +15,13 @@ struct Dusuario {
 //funciones de las preguntas
 
 char pregunta(char correcta) {
-
+    struct Dusuario usuarios[TAM_MAX];
+    int i;
 	char opcion;
 	scanf("%c", &opcion);
 	if (opcion == correcta) {
 		printf("CORRECTO!!!\n");
+		usuarios[i].puntuacion++;
 	}
 	else {
 		printf("pfff un poco mal eh\n");
@@ -31,7 +33,7 @@ int main () {
 	struct Dusuario usuarios[TAM_MAX];
 	struct Dusuario usuariosg[TAM_MAX_GUARDADOS];
 	char color;
-    int tam_users,i=0,edad,menu=0,respuesta;
+    int tam_users,i=0,edad,menu=0,respuesta,preguntas;
     int j=0,orden,ntotalg;
 
     pfile=fopen("ficheru.txt","r");
@@ -135,11 +137,20 @@ int main () {
         }
             //respuestas posibles
             char a,b,c;
-            printf("Cuantas caras tiene un isocaedro?\n");
-            printf("a 2\n");
-            printf("b 15\n");
-            printf("c 20?\n");
-            pregunta('c');
+            i=0;
+            for(preguntas=0;preguntas>=20;preguntas++){
+                if(tam_users!=i){
+                    printf("Cuantas caras tiene un isocaedro?\n");
+                    printf("a 2\n");
+                    printf("b 15\n");
+                    printf("c 20?\n");
+                    pregunta('c');
+                    i++;
+                } else{
+                    break;
+                    i=0;
+                }
+            }
 
 	return 0;
 	//solo para cuando solo haya menu
