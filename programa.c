@@ -156,7 +156,7 @@ int main () {
                 printf("c) Lanzarle acido sulfurico\n");
                 pregunta('c');
                 
-                printf("Uno de los ingredientes mas importantes de la cura se encuentra en una caja fuerte cuya contraseña es la capital de Azerbayan\n");
+                printf("Uno de los ingredientes mas importantes de la cura se encuentra en una caja fuerte cuya contrasenha es la capital de Azerbayan\n");
                 printf("Cual eliges?\n")
                 printf("a) Madrid\n");
                 printf("b) Tiflis\n");
@@ -175,7 +175,7 @@ int main () {
                 printf("c) 10\n");
                 pregunta('a');
                 
-                printf("Ves un zombie en la lejania, tienes un cañon, en que angulo pondrias el cañon respecto al suelo para que el proyectil llegue al zombie?\n");
+                printf("Ves un zombie en la lejania, tienes un canhon, en que angulo pondrias el canhon respecto al suelo para que el proyectil llegue al zombie?\n");
                 printf("a) 0 \n");
                 printf("b) 90\n");
                 printf("c) 45\n");
