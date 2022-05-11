@@ -10,24 +10,38 @@ struct Dusuario {
     char email[50];
     char username[50];
     int puntuacion;
+    char opcion;
 };
 
 //funciones de las preguntas
 
-char pregunta(char correcta) {
-    struct Dusuario usuarios[TAM_MAX];
+void pregunta(char correcta, int tam_users, struct Dusuario usuarios[])	{
+
     int i;
+    int basura;
 	char opcion;
-	scanf("%c", &opcion);
-	if (opcion == correcta) {
-		printf("CORRECTO!!!\n");
-		usuarios[i].puntuacion++;
+	for(i=0;i<tam_users;i++)	{
+		fflush(stdin);
+		printf("Respuesta jugador %d: \n",i+1);
+		scanf("%c", &usuarios[i].opcion);
 	}
-	else {
-		printf("pfff un poco mal eh\n");
+	for(i=0;i<tam_users;i++)	{
+		if (usuarios[i].opcion == correcta) {
+			usuarios[i].puntuacion++;
+		}
 	}
-	return opcion;
+	printf("\n La opcion correcta era la %c",correcta);
+	for(i=0;i<tam_users;i++)	{
+		fflush(stdin);
+		printf("\n Puntos jugador %d: %d",i+1,usuarios[i].puntuacion);
+	}
+	printf("\n Presione cualquier tecla y presione enter");
+	scanf("%d",&basura);
+	system("cls");
+	return;
 }
+
+
 int main () {
 	FILE*pfile;
 	struct Dusuario usuarios[TAM_MAX];
@@ -141,72 +155,69 @@ int main () {
                 printf("a) 2\n");
                 printf("b) 15\n");
                 printf("c) 20\n");
-                pregunta('c');
+                pregunta('c',tam_users,usuarios);
                 
                 printf("Entre los ingredientes para desarrollar la cura necesitas agua, pero solo hay frascos con simbolos quimicos\n");
-                printf("Cual eliges?\n")
+                printf("Cual eliges?\n");
                 printf("a) H2SO4\n");
                 printf("b) H2O\n");
                 printf("c) C6H12O6 \n");
-                pregunta('b');
+                pregunta('b',tam_users,usuarios);
                 
                 printf("De repente se te acerca un zombie, que haces?\n");
                 printf("a) Acariciarlo\n");
                 printf("b) Lanzarle agua\n");
                 printf("c) Lanzarle acido sulfurico\n");
-                pregunta('c');
+                pregunta('c',tam_users,usuarios);
                 
                 printf("Uno de los ingredientes mas importantes de la cura se encuentra en una caja fuerte cuya contrasenha es la capital de Azerbayan\n");
-                printf("Cual eliges?\n")
+                printf("Cual eliges?\n");
                 printf("a) Madrid\n");
                 printf("b) Tiflis\n");
                 printf("c) Baku \n");
-                pregunta('c');
+                pregunta('c',tam_users,usuarios);
                 
                 printf("A cuantos grados corresponde un angulo llano?\n");
                 printf("a) 180 \n");
                 printf("b) 90\n");
                 printf("c) 0\n");
-                pregunta('a');
+                pregunta('a',tam_users,usuarios);
                 
                 printf("Para saber la cantidad de un ingrediente que hay que poner hay que resolver la siguiente ecuacion 2x= 6+4\n");
                 printf("a) 5 \n");
                 printf("b) 20\n");
                 printf("c) 10\n");
-                pregunta('a');
+                pregunta('a',tam_users,usuarios);
                 
                 printf("Ves un zombie en la lejania, tienes un canhon, en que angulo pondrias el canhon respecto al suelo para que el proyectil llegue al zombie?\n");
                 printf("a) 0 \n");
                 printf("b) 90\n");
                 printf("c) 45\n");
-                pregunta('c');
+                pregunta('c',tam_users,usuarios);
                 
                 printf("Tienes mucha sed y solo hay agua en un charco, que haces?\n");
                 printf("a) Filtrarla y hervirla \n");
                 printf("b) Tomar el agua del charco\n");
                 printf("c) Echarle amoniaco\n");
-                pregunta('a');
+                pregunta('a',tam_users,usuarios);
                 
                 printf("Tienes que dejar la cura en un frigorifico por 2 horas, en tu reloj solo funciona el minutero\n");
                 printf("Cuantos minutos tienes que esperar?\n");
                 printf("a) 2 \n");
                 printf("b) 120\n");
                 printf("c) 100\n");
-                pregunta('b');
+                pregunta('b',tam_users,usuarios);
                 
                 printf("Tras pasar las 2 horas, te das cuenta de que no habias anhadido varios ingredientes\n");
                 printf("Necesitas aluminio, de donde lo sacas?\n");
                 printf("a) Del envoltorio de un bocata\n");
                 printf("b) De un trozo de carton\n");
                 printf("c) De una botella\n");
-                pregunta('a');
-            }
-
-	return 0;
-	//solo para cuando solo haya menu
-		printf("\nJugar de nuevo? SI(1) NO(3)\n");
-			scanf("%d",&menu);
-			system("cls");
+                pregunta('a',tam_users,usuarios);
+                fflush(stdin);
+				printf("\nJugar de nuevo? SI(1) NO(3)\n");
+				scanf("%d",&menu);
+				system("cls");
 	//tabular
 		}else if (menu==2)	{
 			system("cls");
