@@ -1,0 +1,50 @@
+Cuantas caras tiene un isocaedro?
+a) 2
+b) 15
+c) 20
+c
+Entre los ingredientes para desarrollar la cura necesitas agua, pero solo hay frascos con simbolos quimicos, cual eliges?
+a) H2SO4
+b) H2O
+c) C6H12O6
+b
+De repente se te acerca un zombie, que haces?
+a) Acariciarlo
+b) Lanzarle agua
+c) Lanzarle acido sulfurico
+c
+Uno de los ingredientes mas importantes de la cura se encuentra en una caja fuerte cuya contrasenha es la capital de Azerbayan, cual eliges?
+a) Madrid
+b) Tiflis
+c) Baku 
+c
+A cuantos grados corresponde un angulo llano?
+a) 180 
+b) 90
+c) 0
+a
+Para saber la cantidad de un ingrediente que hay que poner hay que resolver la siguiente ecuacion 2x= 6+4
+a) 5
+b) 20
+c) 10
+a
+Ves un zombie en la lejania, tienes un canhon, en que angulo pondrias el canhon respecto al suelo para que el proyectil llegue al zombie?\n");
+a) 0 
+b) 90
+c) 45
+c
+Tienes mucha sed y solo hay agua en un charco, que haces?
+a) Filtrarla y hervirla 
+b) Tomar el agua del charco
+c) Echarle amoniaco
+a
+Tienes que dejar la cura en un frigorifico por 2 horas, en tu reloj solo funciona el minutero. Cuantos minutos tienes que esperar?
+a) 2 
+b) 120
+c) 100
+b
+Tras pasar las 2 horas, te das cuenta de que no habias anhadido varios ingredientes. Necesitas aluminio, de donde lo sacas?
+a) Del envoltorio de un bocata
+b) De un trozo de carton
+c) De una botella
+a

@@ -3,7 +3,16 @@
 #include<stdlib.h>
 #include <string.h>
 #define TAM_MAX_GUARDADOS 300
+#include <time.h>
 
+struct Pregunta {
+	char pregunta[400];
+	char a[200];
+	char b[200];
+	char c[200];
+	char correcta;
+	char nose[500];//espacio tras la letra en solitario en el fichero
+};
 struct Dusuario {
     char nombre[50];
     char apellido[100];
@@ -14,7 +23,6 @@ struct Dusuario {
 };
 
 //funciones de las preguntas
-
 void pregunta(char correcta, int tam_users, struct Dusuario usuarios[])	{
 
     int i;
@@ -37,10 +45,33 @@ void pregunta(char correcta, int tam_users, struct Dusuario usuarios[])	{
 	}
 	printf("\n Presione cualquier tecla y presione enter");
 	scanf("%d",&basura);
+	fflush(stdin);
 	system("cls");
 	return;
 }
 
+void preguntasrandom (int a,int b,struct Pregunta textpregunta[],int tam_users,struct Dusuario usuarios[])	{
+    int v[20]; 
+	int j=0;
+    srand(time(NULL));
+    while(j<a){
+        v[j]= b+rand()%(a-b+1);
+        //printf("%d \t",v[i]);
+        //variable=limite_inferior+rand()%(Limite_superior + 1 -Limite_inferior)
+        fflush(stdin);
+		printf("%s",textpregunta[v[j]].pregunta);
+        printf("%s",textpregunta[v[j]].a);
+        printf("%s",textpregunta[v[j]].b);
+        printf("%s",textpregunta[v[j]].c);
+        pregunta(textpregunta[v[j]].correcta,tam_users,usuarios);
+        fflush(stdin);
+        j++;
+    }
+    j=0;
+    
+    
+	return;
+}
 
 int main () {
 	FILE*pfile;
@@ -49,7 +80,27 @@ int main () {
 	char color;
     int tam_users,i=0,edad,menu=0,respuesta,preguntas;
     int j=0,orden,ntotalg;
-
+    struct Pregunta textpregunta[30];
+    
+    pfile=fopen("preguntas.txt","r");
+        if(pfile==NULL){
+            printf("error");
+            return 0;
+        }else{
+            for(i=0;i<10;i++)	{
+                    fflush(stdin);
+					fgets(textpregunta[i].pregunta,500,pfile);
+                    fgets(textpregunta[i].a,500,pfile);
+                    fgets(textpregunta[i].b,500,pfile);
+                    fgets(textpregunta[i].c,500,pfile);
+                    fgets(&textpregunta[i].correcta,2,pfile);
+                    fgets(textpregunta[i].nose,500,pfile);
+                    fflush(stdin);
+            }
+    	}
+    close(pfile);
+    i=0;
+   
     pfile=fopen("ficheru.txt","r");
         if(pfile==NULL){
             printf("error");
@@ -151,70 +202,11 @@ int main () {
         }
             //respuestas posibles
             char a,b,c;
-                printf("Cuantas caras tiene un isocaedro?\n");
-                printf("a) 2\n");
-                printf("b) 15\n");
-                printf("c) 20\n");
-                pregunta('c',tam_users,usuarios);
+            	fflush(stdin);
+            	system("cls");
+                preguntasrandom(10,0,textpregunta,tam_users,usuarios);
                 
-                printf("Entre los ingredientes para desarrollar la cura necesitas agua, pero solo hay frascos con simbolos quimicos\n");
-                printf("Cual eliges?\n");
-                printf("a) H2SO4\n");
-                printf("b) H2O\n");
-                printf("c) C6H12O6 \n");
-                pregunta('b',tam_users,usuarios);
-                
-                printf("De repente se te acerca un zombie, que haces?\n");
-                printf("a) Acariciarlo\n");
-                printf("b) Lanzarle agua\n");
-                printf("c) Lanzarle acido sulfurico\n");
-                pregunta('c',tam_users,usuarios);
-                
-                printf("Uno de los ingredientes mas importantes de la cura se encuentra en una caja fuerte cuya contrasenha es la capital de Azerbayan\n");
-                printf("Cual eliges?\n");
-                printf("a) Madrid\n");
-                printf("b) Tiflis\n");
-                printf("c) Baku \n");
-                pregunta('c',tam_users,usuarios);
-                
-                printf("A cuantos grados corresponde un angulo llano?\n");
-                printf("a) 180 \n");
-                printf("b) 90\n");
-                printf("c) 0\n");
-                pregunta('a',tam_users,usuarios);
-                
-                printf("Para saber la cantidad de un ingrediente que hay que poner hay que resolver la siguiente ecuacion 2x= 6+4\n");
-                printf("a) 5 \n");
-                printf("b) 20\n");
-                printf("c) 10\n");
-                pregunta('a',tam_users,usuarios);
-                
-                printf("Ves un zombie en la lejania, tienes un canhon, en que angulo pondrias el canhon respecto al suelo para que el proyectil llegue al zombie?\n");
-                printf("a) 0 \n");
-                printf("b) 90\n");
-                printf("c) 45\n");
-                pregunta('c',tam_users,usuarios);
-                
-                printf("Tienes mucha sed y solo hay agua en un charco, que haces?\n");
-                printf("a) Filtrarla y hervirla \n");
-                printf("b) Tomar el agua del charco\n");
-                printf("c) Echarle amoniaco\n");
-                pregunta('a',tam_users,usuarios);
-                
-                printf("Tienes que dejar la cura en un frigorifico por 2 horas, en tu reloj solo funciona el minutero\n");
-                printf("Cuantos minutos tienes que esperar?\n");
-                printf("a) 2 \n");
-                printf("b) 120\n");
-                printf("c) 100\n");
-                pregunta('b',tam_users,usuarios);
-                
-                printf("Tras pasar las 2 horas, te das cuenta de que no habias anhadido varios ingredientes\n");
-                printf("Necesitas aluminio, de donde lo sacas?\n");
-                printf("a) Del envoltorio de un bocata\n");
-                printf("b) De un trozo de carton\n");
-                printf("c) De una botella\n");
-                pregunta('a',tam_users,usuarios);
-                fflush(stdin);
+				fflush(stdin);
 				printf("\nJugar de nuevo? SI(1) NO(3)\n");
 				scanf("%d",&menu);
 				system("cls");
