@@ -48,3 +48,29 @@ a) Del envoltorio de un bocata
 b) De un trozo de carton
 c) De una botella
 a
+Se te acerca un zombie, que le lanzas?
+a) Un beso
+b) A tu compañero
+c) Acido sulfurico
+c
+Se han escapado los animales del zoo de la ciudad. Ves un tigre hambriento, que le das de comer?
+a) Una gallina que tambien se escapo
+b) Te sacrificas
+c) Una lechuga
+a
+Si necesitas un objeto de color azabache. De que color es el objeto?
+a) Verde
+b) Negro
+c) Naranja
+b
+La mezcla tiene que ser de color naranja y la que estas preparando es de color amarillo.
+a) Le echo el tubo de ensayo rojo
+b) Le echo el tubo de ensayo negro
+c) Le echo agua
+a
+La contrasena de un deposito de gasoil, el cual necesitas para la cura, es una palabra palindroma. Cual es?
+a) Abeja
+b) Aerorrefrigerador
+c) Ojo
+c
+
