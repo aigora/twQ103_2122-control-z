@@ -73,4 +73,29 @@ a) Abeja
 b) Aerorrefrigerador
 c) Ojo
 c
+Si requieres aumentar la concentracion de un compuesto X, que haces?
+a) Calentar la mezcla pues el compuesto X tiene mayor temperatura de ebullicion
+b) Añadir agua
+c) Reducir la cantidad de mezcla
+a
+Requieres sal de mesa para preparar la cena para ti y tus companeros, que eliges?
+a) HCl
+b) NaCl
+c) KNO3
+b
+Tienes que poner 1 litro de NaOH disuelto en una mezcla, la pipeta viene en centilitros. Cuanto anades?
+a) 1000 cl
+b) 0.01 cl
+c) 100 cl
+c
+Para realizar un experimento tienes que usar el valor de la aceleracion de la gravedad. Que valor es?
+a) 10 cm/s^2
+b) 9.8 cm/s^2
+c) 9.8 m/s^2
+c
+Tras mucho esfuerzo casi tienes la cura, contra que era?
+a) Viruz
+b) Covid19
+c) Virus Z
+c
 
