@@ -44,14 +44,14 @@ void pregunta(char correcta, int tam_users, struct Dusuario usuarios[])	{
 		printf("\n Puntos jugador %d: %d",i+1,usuarios[i].puntuacion);
 	}
 	printf("\n Presione cualquier tecla y presione enter");
-	scanf("%d",&basura);
+	scanf("%d",&basura); //Este scanf es para que el usuario marque el ritmo de su partida, pero para el programa no es útil (por eso se llama basura)
 	fflush(stdin);
 	system("cls");
 	return;
 }
 
 void preguntasrandom (int a,int b,struct Pregunta textpregunta[],int tam_users,struct Dusuario usuarios[])	{
-    int v[20]; 
+    int v[20];
 	int j=0;
     srand(time(NULL));
     while(j<a){
@@ -68,20 +68,19 @@ void preguntasrandom (int a,int b,struct Pregunta textpregunta[],int tam_users,s
         j++;
     }
     j=0;
-    
-    
+
+
 	return;
 }
 
 int main () {
 	FILE*pfile;
-	struct Dusuario usuarios[TAM_MAX];
-	struct Dusuario usuariosg[TAM_MAX_GUARDADOS];
+	struct Dusuario usuarios[TAM_MAX]; //Estructura de los usuarios que van a jugar
+	struct Dusuario usuariosg[TAM_MAX_GUARDADOS]; //Estructura de los usuarios ya guardados con sus putuaciones, todo esto está en un fichero
+	struct Pregunta textpregunta[30];
 	char color;
-    int tam_users,i=0,edad,menu=0,respuesta,preguntas;
-    int j=0,orden,ntotalg;
-    struct Pregunta textpregunta[30];
-    
+    int tam_users,i=0,edad,menu=0,respuesta,preguntas,j=0,orden,ntotalg;
+
     pfile=fopen("preguntas.txt","r");
         if(pfile==NULL){
             printf("error");
@@ -98,17 +97,17 @@ int main () {
                     fflush(stdin);
             }
     	}
-    close(pfile);
+    fclose(pfile);
     i=0;
-   
+
     pfile=fopen("ficheru.txt","r");
         if(pfile==NULL){
             printf("error");
             return 0;
-        }else{
+        }else{//Aquí se meten a los usuarios guardados dentro del struct Dusuarios usuariosg
             while(fscanf(pfile,"%s %s %s %s %d",usuariosg[i].nombre,usuariosg[i].apellido,usuariosg[i].email,usuariosg[i].username,&usuariosg[i].puntuacion)!=EOF){
                     i++;
-                    ntotalg++;
+                    ntotalg++;//número total de usuarios guardados, esto se utilizará más tarde para comprobar si el usuario que mete el usuario es antiguo o no
             }
         }
         fclose(pfile);
@@ -144,7 +143,7 @@ int main () {
     do{
         printf("Cuantos cientificos nos salvaran? (la jugabilidad maxima de este juego son 4 usuarios): \n");
         scanf("%d",&tam_users);
-    }while(tam_users>4);
+    }while(tam_users>4);//Jugabilidad máxima de 4 jugadores
 
 	//ficheros
     i=0;
@@ -152,7 +151,7 @@ int main () {
             printf("Si es un nuevo usuario pulse 1 si es un usuario antiguo pulse 2 \n");
             scanf("%d",&respuesta);
 
-        if(respuesta==1){
+        if(respuesta==1){//al ser un usuario nuevo se meten todos los datos en el struct Dusuarios usuario sin comparar de que sea antiguo
                 fflush(stdin);
                 pfile=fopen("ficheru.txt","a");
                 printf("Escriba su primer nombre cientifico %d \n",i+1);
@@ -163,7 +162,7 @@ int main () {
                 gets(usuarios[i].email);
                 printf("Escriba su username \n");
                 gets(usuarios[i].username);
-                usuarios[i].puntuacion=0;
+                usuarios[i].puntuacion=0;//Se guardaran los datos del usuario en el fichero
                 fprintf(pfile,"%s %s %s %s %s %d \n",usuarios[i].nombre,usuarios[i].apellido,usuarios[i].email,usuarios[i].username,&usuarios[i].puntuacion);
                 fclose(pfile);
         }
@@ -172,19 +171,19 @@ int main () {
                 printf("Digame su nombre de usuario \n");
                 gets(usuarios[i].username);
                 j=ntotalg;
-            while(j>=0){
+            while(j>=0){//Aqui se oompara todos los usuarios guardados con el usuario nuevo
                 orden=strcmp(usuarios[i].username,usuariosg[j].username);
                 if(orden==0){
                     printf("Bienvenido %s, te echabamos de menos, su ultima puntuacion es %d\n",usuariosg[j].username,usuariosg[j].puntuacion);
                     usuarios[i].puntuacion=0;
-                    break;
+                    break; //al encontrar al usuario ya no se necesita seguir
                 }else{
                     j--;
                 }
                 }
             if(orden!=0){
                     printf("no encontramos su nombre de usuario \n");
-                    i--;
+                    i--;//Si no lo encuentra resta a i un -1 básicamente para que el número de usuarios sea el que se pidió con anterioridad y no sean menos
                 }
 
             if(orden==0){
@@ -192,7 +191,7 @@ int main () {
                     if(pfile==NULL){
                         printf("error");
                         return 0;}
-                fprintf(pfile,"\n");
+                fprintf(pfile,"\n");//Como ya tenemos todos los datos (ya que jugó una partida con anterioridad), se guardan directamente en el fichero
                 fprintf(pfile,"%s %s %s %s %d \n",usuariosg[j].nombre,usuariosg[j].apellido,usuariosg[j].email,usuarios[i].username,usuarios[i].puntuacion);
                 fclose(pfile);
                 }
@@ -205,7 +204,7 @@ int main () {
             	fflush(stdin);
             	system("cls");
                 preguntasrandom(10,0,textpregunta,tam_users,usuarios);
-                
+
 				fflush(stdin);
 				printf("\nJugar de nuevo? SI(1) NO(3)\n");
 				scanf("%d",&menu);
