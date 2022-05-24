@@ -50,11 +50,11 @@ void pregunta(char correcta, int tam_users, struct Dusuario usuarios[])	{
 	return;
 }
 
-void preguntasrandom (int a,int b,struct Pregunta textpregunta[],int tam_users,struct Dusuario usuarios[])	{
+void preguntasrandom (int a,int b,struct Pregunta textpregunta[],int tam_users,struct Dusuario usuarios[],int npreguntas)	{
     int v[20];
 	int j=0;
     srand(time(NULL));
-    while(j<a){
+    while(j<npreguntas){
         v[j]= b+rand()%(a-b+1);
         //printf("%d \t",v[i]);
         //variable=limite_inferior+rand()%(Limite_superior + 1 -Limite_inferior)
@@ -77,16 +77,16 @@ int main () {
 	FILE*pfile;
 	struct Dusuario usuarios[TAM_MAX]; //Estructura de los usuarios que van a jugar
 	struct Dusuario usuariosg[TAM_MAX_GUARDADOS]; //Estructura de los usuarios ya guardados con sus putuaciones, todo esto está en un fichero
-	struct Pregunta textpregunta[30];
+	struct Pregunta textpregunta[40];
 	char color;
-    int tam_users,i=0,edad,menu=0,respuesta,preguntas,j=0,orden,ntotalg;
+    int tam_users,i=0,edad,menu=0,respuesta,preguntas,j=0,orden,ntotalg,npreguntas;
 
     pfile=fopen("preguntas.txt","r");
         if(pfile==NULL){
             printf("error");
             return 0;
         }else{
-            for(i=0;i<10;i++)	{
+            for(i=0;i<30;i++)	{
                     fflush(stdin);
 					fgets(textpregunta[i].pregunta,500,pfile);
                     fgets(textpregunta[i].a,500,pfile);
@@ -199,12 +199,19 @@ int main () {
 
             i++;
         }
-            //respuestas posibles
-            char a,b,c;
             	fflush(stdin);
+            		while(npreguntas>3)	{
+						printf("\n Duracion de partida corta(1), media(2) o larga(3) \t (10, 15 o 20 preguntas respectivamente)\n");
+						scanf("%d",&npreguntas);
+					}
             	system("cls");
-                preguntasrandom(10,0,textpregunta,tam_users,usuarios);
-
+            		if (npreguntas==1)	{
+            			preguntasrandom(10,0,textpregunta,tam_users,usuarios,10);
+					}else if (npreguntas==2)	{
+						preguntasrandom(10,0,textpregunta,tam_users,usuarios,15);
+					}else if (npreguntas==3)	{
+						preguntasrandom(10,0,textpregunta,tam_users,usuarios,20);
+					}
 				fflush(stdin);
 				printf("\nJugar de nuevo? SI(1) NO(3)\n");
 				scanf("%d",&menu);
