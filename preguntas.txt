@@ -28,7 +28,7 @@ a) 5
 b) 20
 c) 10
 a
-Ves un zombie en la lejania, tienes un canhon, en que angulo pondrias el canhon respecto al suelo para que el proyectil llegue al zombie?\n");
+Ves un zombie en la lejania, tienes un cañón, en que angulo pondrias el cañón respecto al suelo para que el proyectil llegue al zombie?\n");
 a) 0 
 b) 90
 c) 45
