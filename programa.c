@@ -11,7 +11,7 @@ struct Pregunta {
 	char b[200];
 	char c[200];
 	char correcta;
-	char espacio_blanco[500];//el fgets al entrar en bucle y al ser un solo caracter necesita coger el espacio blanco tras la letra del fichero preguntas.txt 
+	char espacio_blanco[500];//el fgets al entrar en bucle y al ser un solo caracter necesita coger el espacio blanco tras la letra del fichero preguntas.txt
 };
 struct Dusuario {
     char nombre[50];
@@ -168,9 +168,9 @@ int main () {
                 printf("Digame su nombre de usuario \n");
                 gets(usuarios[i].username);
                 j=ntotalg;
-            while(j>=0){//Aqui se oompara todos los usuarios guardados con el usuario nuevo
+            while(j>=0){//Aqui se compara todos los usuarios guardados con el usuario nuevo
                 orden=strcmp(usuarios[i].username,usuariosg[j].username);
-                
+
                 if(orden==0){
                     printf("Bienvenido %s, te echabamos de menos, su ultima puntuacion es %d\n",usuariosg[j].username,usuariosg[j].puntuacion);
                     usuarios[i].puntuacion=0;
@@ -190,7 +190,7 @@ int main () {
 
             i++;
         }
-        
+
 		fflush(stdin);
            			do{
 					printf("\n Duracion de partida corta(1), media(2) o larga(3) \t (10, 15 o 20 preguntas respectivamente)\n");
@@ -214,7 +214,7 @@ int main () {
 				}else{
 				for(i=0;i<tam_users;i++)	{
 					fprintf(pfile,"%s %s %s %s %d \n",usuarios[i].nombre,usuarios[i].apellido,usuarios[i].email,usuarios[i].username,usuarios[i].puntuacion);
-					printf("Puntuacion %s: %d\n",usuarios[i].username,usuarios[i].puntuacion);               	
+					printf("Puntuacion %s: %d\n",usuarios[i].username,usuarios[i].puntuacion);
 				}
 				}
 			fclose(pfile);
@@ -231,9 +231,9 @@ int main () {
 			printf("Verde(V),Rojo(R),Amarillo(A),Blanco(B):\t");
 
 			scanf("%c",&color);
-			
+
 			//la biblioteca que nos brinda el acceso a cambiar el color hace referencia con el primer numero al fondo y con el segundo al color de las letras
-			
+
 			if (color=='V' || color=='v')	{
 				system("COLOR 02");
 
