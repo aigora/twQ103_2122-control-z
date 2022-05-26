@@ -22,6 +22,25 @@ struct Dusuario {
     char opcion;
 };
 
+void titulo (int modelo)	{
+	if(modelo==1)	{
+    	printf("\n\n");
+    	printf("\n");
+    	printf("\t\t\t       ____     ____            _______   ____    ____            ________       \n");
+    	printf("\t\t\t      |        |    |   |-    |    |     |    |  |    |   |            /         \n");
+    	printf("\t\t\t      |        |    |   | |-  |    |     |____|  |    |   |        ___/__        \n");
+    	printf("\t\t\t      |        |    |   |  |- |    |     |   |-  |    |   |          /           \n");
+    	printf("\t\t\t      |____    |____|   |   |-|    |     |    |- |____|   |____   __/_____       \n");
+    	printf("\n\n");
+    	printf("\n\n");
+    
+	}else if(modelo==2)	{
+		printf("\n\n------------------------------------------------------------------------------------------------------------------------\n");
+    	printf("\n\t\t\t\tcontrol z,\t control z,\t CONTROL Z!!!!!!!!!\n");
+    	printf("\n------------------------------------------------------------------------------------------------------------------------\n\n");	
+	}
+	return;
+}
 //funciones de las preguntas
 void pregunta(char correcta, int tam_users, struct Dusuario usuarios[])	{
 
@@ -59,6 +78,7 @@ void preguntasrandom (int a,int b,struct Pregunta textpregunta[],int tam_users,s
         //printf("%d \t",v[i]);
         //variable=limite_inferior+rand()%(Limite_superior + 1 -Limite_inferior)
         fflush(stdin);
+        titulo(1);
 		printf("%s",textpregunta[v[j]].pregunta);//al ser textpregunta[v[j]] elije una de las 30 preguntas del repertorio aleatoriamente
         printf("%s",textpregunta[v[j]].a);
         printf("%s",textpregunta[v[j]].b);
@@ -113,9 +133,7 @@ int main () {
         fclose(pfile);
 	system("COLOR 04");
     while (menu!=3)	{
-    	printf("\n------------------------------------------------------------------------------------------------------------------------\n");
-    	printf("\n\t\t\t\tcontrol z,\t control z,\t CONTROL Z!!!!!!!!!\n");
-    	printf("\n------------------------------------------------------------------------------------------------------------------------\n");
+    	titulo(2);
     	printf("\n %c INICIAR PARTIDA(1)\n\n %c CONFIGURACION(2)\n\n %c SALIR(3)\n",175,175,175);
     	printf("\n\n%c Indique que desea hacer con el numero correspondiente:\t",175);
     	scanf("%d",&menu);
